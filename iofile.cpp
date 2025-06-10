@@ -3,33 +3,33 @@
 #include <string>
 using namespace std;
 
-int main() {
+int main()
+{
     string baris;
 
-    // membuka file dalam mode menulis.
+    // Membuka file dalam mode menulis
     ofstream outfile;
-    // menunjuk ke sebuah nama file
-    outfile.open("contohfile.txt");
+    // Menunjuk ke sebuah nama file
+    outfile.open("data.txt");
 
-    cout << ">> Menulis file, \\q untuk keluar" << endl;
-}
+    cout << ">= Menulis File, \'q\' untuk keluar" << endl;
 
-//unlimited loop untuk menulis
-while (true) 
-{
-    cout << "-";
-    //mendapatkan setiap karakter dalam satu baris 
-    getline(cin, baris);
-    //loop akan berhenti jika anda memasukan karakter q
-    if (baris == "q") break;
-    // menulis dan memasukan nilai dari "baris " ke dalam file
-    outfile << baris << endl;
-
-}
-//selesai dalam menulis sekarang tutup filenya
-outfile.close();
-//membuka file dalam mode membaca
-ifstream infile;
+    // unlimited loop untuk menulis
+    while (true)
+    {
+        cout << "- ";
+        // mendapatkan setiap karakter dalam satu baris
+        getline(cin, baris);
+        // loop akan berhenti jika ada memasukkan karakter q
+        if (baris == "q")
+            break;
+        // menulis dan memasukkan nilai dari 'baris' ke dalam file
+        outfile << baris << endl; // menulis ke file
+    }
+    // selesai dalam menulis sekarang tutup filenya
+    outfile.close(); // menutup file
+    // Membuka file dalam mode membaca
+    ifstream infile;
     // menunjuk ke sebuah nama file
     infile.open("contohfile.txt");
     cout << endl
@@ -44,4 +44,10 @@ ifstream infile;
             cout << baris << '\n';
         }
         // tutup file tersebut setelah selesai
+        infile.close();
     }
+    // jika tidak ditemukan file maka akan menampilkan ini
+    else
+        cout << "File tidak ditemukan!" << endl;
+    return 0;
+}
