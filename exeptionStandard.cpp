@@ -15,4 +15,12 @@ int main()
         cout << data.at(5) << endl;
         // memanggil elemen ke-5
     }
-    
+    catch (exception &e)
+    {
+        // menangkap menggunakan obyek exception
+        cout << e.what() << endl;
+        //*akan dieksekusi jika terjadi exception
+    }
+    cout << "Baris Program yang terakhir" << endl;
+    return 0;
+}
