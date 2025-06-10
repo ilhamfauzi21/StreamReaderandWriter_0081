@@ -27,4 +27,11 @@ int main()
             break; // Menulis dan memasukkan nilai dari 'baris' ke file
         }
 
+        // Menulis baris ke file
+        outFile << baris << endl;
+        outFile.close();
+        ifstream inFile;
+        inFile.open(NamaFile, ios::in);
+        cout << endl
+             << "Membukan dan membaca file " << endl;
         
