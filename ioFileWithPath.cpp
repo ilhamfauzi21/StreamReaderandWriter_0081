@@ -34,4 +34,18 @@ int main()
         inFile.open(NamaFile, ios::in);
         cout << endl
              << "Membukan dan membaca file " << endl;
-        
+        // Melakukan perulangan setiap baris
+        if (inFile.is_open())
+        {
+            while (getline(inFile, baris))
+            {
+                cout << baris << '\n'; // Menampilkan isi file
+            }
+            // Menutup file setelah selesai membaca
+            inFile.close();
+        }
+        // jika tidak diyemukan file maka akan menampilkan ini
+        else
+            cout << "Tidak dapat membuka file.";
+        return 0;
+    }
