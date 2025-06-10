@@ -9,6 +9,9 @@ int main()
         throw 0,5;
         cout << "Pengecualian tidak akan dieksekusi" << endl;
     }
-    catch(int)
+    catch (int a)
+    {
+        /jika integer maka bloc ini akan dieksekusi/
+        cout << "Pernyataan akan dieksekusi" << endl; // penanda 2: menangkap exception
     }
-}
+   
