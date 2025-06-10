@@ -14,4 +14,10 @@ int main()
         /jika integer maka bloc ini akan dieksekusi/
         cout << "Pernyataan akan dieksekusi" << endl; // penanda 2: menangkap exception
     }
-   
+    catch (...)
+    {
+        /jika selain integer maka bloc ini akan dieksekusi/
+        cout << "default Pengecualian dieksekusi" << endl;
+    }
+    return 0;
+}
